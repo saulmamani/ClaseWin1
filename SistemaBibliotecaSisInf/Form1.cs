@@ -23,7 +23,7 @@ namespace SistemaBibliotecaSisInf
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.openForm(new FrmLibros());
+            this.openForm(new FrmLibro());
         }
 
         private void openForm(Form frm) {

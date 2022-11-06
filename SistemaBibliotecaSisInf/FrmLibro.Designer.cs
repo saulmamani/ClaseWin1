@@ -1,6 +1,6 @@
 ﻿namespace SistemaBibliotecaSisInf
 {
-    partial class FrmAlumno
+    partial class FrmLibro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label ciLabel;
-            System.Windows.Forms.Label direccionLabel;
+            System.Windows.Forms.Label autorLabel;
+            System.Windows.Forms.Label codigoLabel;
+            System.Windows.Forms.Label edicionLabel;
+            System.Windows.Forms.Label estadoLabel;
             System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label telefonoLabel;
+            System.Windows.Forms.Label tituloLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.estudianteDataGridView = new System.Windows.Forms.DataGridView();
@@ -41,79 +42,91 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.autorTextBox = new System.Windows.Forms.TextBox();
+            this.codigoTextBox = new System.Windows.Forms.TextBox();
+            this.edicionTextBox = new System.Windows.Forms.TextBox();
+            this.estadoLabel1 = new System.Windows.Forms.Label();
+            this.idLabel1 = new System.Windows.Forms.Label();
+            this.tituloTextBox = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.ciTextBox = new System.Windows.Forms.TextBox();
-            this.direccionTextBox = new System.Windows.Forms.TextBox();
-            this.idLabel1 = new System.Windows.Forms.Label();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.libroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnEliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ciLabel = new System.Windows.Forms.Label();
-            direccionLabel = new System.Windows.Forms.Label();
+            autorLabel = new System.Windows.Forms.Label();
+            codigoLabel = new System.Windows.Forms.Label();
+            edicionLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
-            nombreLabel = new System.Windows.Forms.Label();
-            telefonoLabel = new System.Windows.Forms.Label();
+            tituloLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libroBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ciLabel
+            // autorLabel
             // 
-            ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(22, 101);
-            ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(27, 20);
-            ciLabel.TabIndex = 0;
-            ciLabel.Text = "Ci:";
+            autorLabel.AutoSize = true;
+            autorLabel.Location = new System.Drawing.Point(19, 193);
+            autorLabel.Name = "autorLabel";
+            autorLabel.Size = new System.Drawing.Size(52, 20);
+            autorLabel.TabIndex = 5;
+            autorLabel.Text = "Autor:";
             // 
-            // direccionLabel
+            // codigoLabel
             // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(22, 245);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(79, 20);
-            direccionLabel.TabIndex = 2;
-            direccionLabel.Text = "Direccion:";
+            codigoLabel.AutoSize = true;
+            codigoLabel.Location = new System.Drawing.Point(19, 93);
+            codigoLabel.Name = "codigoLabel";
+            codigoLabel.Size = new System.Drawing.Size(63, 20);
+            codigoLabel.TabIndex = 7;
+            codigoLabel.Text = "Codigo:";
+            // 
+            // edicionLabel
+            // 
+            edicionLabel.AutoSize = true;
+            edicionLabel.Location = new System.Drawing.Point(19, 239);
+            edicionLabel.Name = "edicionLabel";
+            edicionLabel.Size = new System.Drawing.Size(65, 20);
+            edicionLabel.TabIndex = 9;
+            edicionLabel.Text = "Edicion:";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(19, 292);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(64, 20);
+            estadoLabel.TabIndex = 11;
+            estadoLabel.Text = "Estado:";
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(22, 43);
+            idLabel.Location = new System.Drawing.Point(19, 52);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(27, 20);
-            idLabel.TabIndex = 4;
+            idLabel.TabIndex = 13;
             idLabel.Text = "Id:";
             // 
-            // nombreLabel
+            // tituloLabel
             // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(22, 149);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(69, 20);
-            nombreLabel.TabIndex = 6;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(22, 197);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(75, 20);
-            telefonoLabel.TabIndex = 8;
-            telefonoLabel.Text = "Telefono:";
+            tituloLabel.AutoSize = true;
+            tituloLabel.Location = new System.Drawing.Point(19, 139);
+            tituloLabel.Name = "tituloLabel";
+            tituloLabel.Size = new System.Drawing.Size(51, 20);
+            tituloLabel.TabIndex = 15;
+            tituloLabel.Text = "Titulo:";
             // 
             // label1
             // 
@@ -121,9 +134,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 37);
+            this.label1.Size = new System.Drawing.Size(132, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ALUMNOS";
+            this.label1.Text = "LIBROS";
             // 
             // panel1
             // 
@@ -139,8 +152,8 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(364, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 521);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(802, 529);
+            this.panel1.TabIndex = 2;
             // 
             // estudianteDataGridView
             // 
@@ -152,27 +165,28 @@
             this.estudianteDataGridView.AutoGenerateColumns = false;
             this.estudianteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.estudianteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
+            this.idDataGridViewTextBoxColumn,
+            this.codigoDataGridViewTextBoxColumn,
+            this.tituloDataGridViewTextBoxColumn,
+            this.autorDataGridViewTextBoxColumn,
+            this.edicionDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
             this.btnEditar,
             this.btnEliminar});
-            this.estudianteDataGridView.DataSource = this.estudianteBindingSource;
+            this.estudianteDataGridView.DataSource = this.libroBindingSource;
             this.estudianteDataGridView.Location = new System.Drawing.Point(3, 58);
             this.estudianteDataGridView.Name = "estudianteDataGridView";
             this.estudianteDataGridView.ReadOnly = true;
             this.estudianteDataGridView.RowHeadersWidth = 62;
             this.estudianteDataGridView.RowTemplate.Height = 28;
-            this.estudianteDataGridView.Size = new System.Drawing.Size(790, 458);
+            this.estudianteDataGridView.Size = new System.Drawing.Size(794, 466);
             this.estudianteDataGridView.TabIndex = 12;
             this.estudianteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.estudianteDataGridView_CellClick);
             // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.Location = new System.Drawing.Point(641, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(645, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(101, 48);
             this.btnBuscar.TabIndex = 1;
@@ -186,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.Location = new System.Drawing.Point(3, 15);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(632, 30);
+            this.txtBuscar.Size = new System.Drawing.Size(636, 30);
             this.txtBuscar.TabIndex = 0;
             // 
             // btnCerrar
@@ -196,7 +210,7 @@
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(748, -2);
+            this.btnCerrar.Location = new System.Drawing.Point(752, -2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(49, 46);
             this.btnCerrar.TabIndex = 0;
@@ -208,29 +222,81 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(ciLabel);
-            this.groupBox1.Controls.Add(this.ciTextBox);
-            this.groupBox1.Controls.Add(direccionLabel);
-            this.groupBox1.Controls.Add(this.direccionTextBox);
+            this.groupBox1.Controls.Add(autorLabel);
+            this.groupBox1.Controls.Add(this.autorTextBox);
+            this.groupBox1.Controls.Add(codigoLabel);
+            this.groupBox1.Controls.Add(this.codigoTextBox);
+            this.groupBox1.Controls.Add(edicionLabel);
+            this.groupBox1.Controls.Add(this.edicionTextBox);
+            this.groupBox1.Controls.Add(estadoLabel);
+            this.groupBox1.Controls.Add(this.estadoLabel1);
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.idLabel1);
-            this.groupBox1.Controls.Add(nombreLabel);
-            this.groupBox1.Controls.Add(this.nombreTextBox);
-            this.groupBox1.Controls.Add(telefonoLabel);
-            this.groupBox1.Controls.Add(this.telefonoTextBox);
+            this.groupBox1.Controls.Add(tituloLabel);
+            this.groupBox1.Controls.Add(this.tituloTextBox);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(19, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 522);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(340, 530);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
+            // autorTextBox
+            // 
+            this.autorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Autor", true));
+            this.autorTextBox.Location = new System.Drawing.Point(90, 187);
+            this.autorTextBox.Name = "autorTextBox";
+            this.autorTextBox.Size = new System.Drawing.Size(244, 26);
+            this.autorTextBox.TabIndex = 2;
+            // 
+            // codigoTextBox
+            // 
+            this.codigoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Codigo", true));
+            this.codigoTextBox.Location = new System.Drawing.Point(90, 90);
+            this.codigoTextBox.Name = "codigoTextBox";
+            this.codigoTextBox.Size = new System.Drawing.Size(244, 26);
+            this.codigoTextBox.TabIndex = 0;
+            // 
+            // edicionTextBox
+            // 
+            this.edicionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Edicion", true));
+            this.edicionTextBox.Location = new System.Drawing.Point(90, 233);
+            this.edicionTextBox.Name = "edicionTextBox";
+            this.edicionTextBox.Size = new System.Drawing.Size(244, 26);
+            this.edicionTextBox.TabIndex = 3;
+            // 
+            // estadoLabel1
+            // 
+            this.estadoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Estado", true));
+            this.estadoLabel1.Location = new System.Drawing.Point(95, 292);
+            this.estadoLabel1.Name = "estadoLabel1";
+            this.estadoLabel1.Size = new System.Drawing.Size(225, 20);
+            this.estadoLabel1.TabIndex = 12;
+            this.estadoLabel1.Text = "label2";
+            // 
+            // idLabel1
+            // 
+            this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Id", true));
+            this.idLabel1.Location = new System.Drawing.Point(90, 49);
+            this.idLabel1.Name = "idLabel1";
+            this.idLabel1.Size = new System.Drawing.Size(244, 23);
+            this.idLabel1.TabIndex = 14;
+            this.idLabel1.Text = "label2";
+            // 
+            // tituloTextBox
+            // 
+            this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.libroBindingSource, "Titulo", true));
+            this.tituloTextBox.Location = new System.Drawing.Point(90, 136);
+            this.tituloTextBox.Name = "tituloTextBox";
+            this.tituloTextBox.Size = new System.Drawing.Size(244, 26);
+            this.tituloTextBox.TabIndex = 1;
+            // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(202, 336);
+            this.btnCancelar.Location = new System.Drawing.Point(202, 423);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 44);
             this.btnCancelar.TabIndex = 5;
@@ -240,7 +306,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(26, 336);
+            this.btnGuardar.Location = new System.Drawing.Point(26, 423);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(170, 44);
             this.btnGuardar.TabIndex = 4;
@@ -248,54 +314,13 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // ciTextBox
-            // 
-            this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "Ci", true));
-            this.ciTextBox.Location = new System.Drawing.Point(107, 98);
-            this.ciTextBox.Name = "ciTextBox";
-            this.ciTextBox.Size = new System.Drawing.Size(213, 26);
-            this.ciTextBox.TabIndex = 0;
-            // 
-            // direccionTextBox
-            // 
-            this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(107, 242);
-            this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(213, 26);
-            this.direccionTextBox.TabIndex = 3;
-            // 
-            // idLabel1
-            // 
-            this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "Id", true));
-            this.idLabel1.Location = new System.Drawing.Point(103, 43);
-            this.idLabel1.Name = "idLabel1";
-            this.idLabel1.Size = new System.Drawing.Size(100, 23);
-            this.idLabel1.TabIndex = 5;
-            this.idLabel1.Text = "label2";
-            // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(107, 146);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(213, 26);
-            this.nombreTextBox.TabIndex = 1;
-            // 
-            // telefonoTextBox
-            // 
-            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.estudianteBindingSource, "Telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(107, 194);
-            this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(213, 26);
-            this.telefonoTextBox.TabIndex = 2;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(1057, 6);
+            this.btnNuevo.Location = new System.Drawing.Point(1061, 6);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(101, 48);
-            this.btnNuevo.TabIndex = 13;
+            this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -320,6 +345,65 @@
             this.dataGridViewImageColumn2.ToolTipText = "Eliminar";
             this.dataGridViewImageColumn2.Width = 150;
             // 
+            // libroBindingSource
+            // 
+            this.libroBindingSource.DataSource = typeof(SistemaBibliotecaSisInf.Modelos.Libro);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tituloDataGridViewTextBoxColumn
+            // 
+            this.tituloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tituloDataGridViewTextBoxColumn.DataPropertyName = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.HeaderText = "Titulo";
+            this.tituloDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tituloDataGridViewTextBoxColumn.Name = "tituloDataGridViewTextBoxColumn";
+            this.tituloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tituloDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // autorDataGridViewTextBoxColumn
+            // 
+            this.autorDataGridViewTextBoxColumn.DataPropertyName = "Autor";
+            this.autorDataGridViewTextBoxColumn.HeaderText = "Autor";
+            this.autorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
+            this.autorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.autorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // edicionDataGridViewTextBoxColumn
+            // 
+            this.edicionDataGridViewTextBoxColumn.DataPropertyName = "Edicion";
+            this.edicionDataGridViewTextBoxColumn.HeaderText = "Edicion";
+            this.edicionDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.edicionDataGridViewTextBoxColumn.Name = "edicionDataGridViewTextBoxColumn";
+            this.edicionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.edicionDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Width = 150;
+            // 
             // btnEditar
             // 
             this.btnEditar.HeaderText = "";
@@ -340,76 +424,27 @@
             this.btnEliminar.ToolTipText = "Eliminar";
             this.btnEliminar.Width = 70;
             // 
-            // estudianteBindingSource
-            // 
-            this.estudianteBindingSource.DataSource = typeof(SistemaBibliotecaSisInf.Modelos.Estudiante);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Ci";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ci";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Direccion";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Direccion";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Telefono";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 150;
-            // 
-            // FrmAlumno
+            // FrmLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 594);
+            this.ClientSize = new System.Drawing.Size(1182, 602);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmAlumno";
+            this.Name = "FrmLibro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alumnos";
+            this.Text = "Libros";
             this.Load += new System.EventHandler(this.FrmAlumno_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libroBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,25 +462,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox ciTextBox;
-        private System.Windows.Forms.TextBox direccionTextBox;
-        private System.Windows.Forms.Label idLabel1;
-        private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.TextBox telefonoTextBox;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView estudianteDataGridView;
-        private System.Windows.Forms.BindingSource estudianteBindingSource;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.BindingSource libroBindingSource;
+        private System.Windows.Forms.TextBox autorTextBox;
+        private System.Windows.Forms.TextBox codigoTextBox;
+        private System.Windows.Forms.TextBox edicionTextBox;
+        private System.Windows.Forms.Label estadoLabel1;
+        private System.Windows.Forms.Label idLabel1;
+        private System.Windows.Forms.TextBox tituloTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edicionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn btnEditar;
         private System.Windows.Forms.DataGridViewImageColumn btnEliminar;
     }

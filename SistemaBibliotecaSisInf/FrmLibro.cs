@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace SistemaBibliotecaSisInf
 {
-    public partial class FrmAlumno : Form
+    public partial class FrmLibro : Form
     {
-        EstudianteController estudianteController = new EstudianteController();
-        public FrmAlumno()
+        LibroController libroController = new LibroController();
+        public FrmLibro()
         {
             InitializeComponent();
         }
@@ -30,30 +30,30 @@ namespace SistemaBibliotecaSisInf
         }
 
         private void buscar() { 
-            estudianteBindingSource.DataSource = estudianteController.buscar(txtBuscar.Text);
+            libroBindingSource.DataSource = libroController.buscar(txtBuscar.Text);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             this.groupBox1.Enabled = true;
-            this.estudianteBindingSource.AddNew();
+            this.libroBindingSource.AddNew();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.groupBox1.Enabled = false;
-            this.estudianteBindingSource.CancelEdit();
+            this.libroBindingSource.CancelEdit();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Estudiante estudiante = new Estudiante();
-            estudiante = (Estudiante)estudianteBindingSource.Current;
+            Libro libro = new Libro();
+            libro = (Libro)libroBindingSource.Current;
 
             if (this.idLabel1.Text == "0")
-                estudianteController.insertar(estudiante);
+                libroController.insertar(libro);
             else
-                estudianteController.modificar(estudiante);
+                libroController.modificar(libro);
 
             MessageBox.Show("Datos guardados correctamente!!");
             buscar();
@@ -84,7 +84,7 @@ namespace SistemaBibliotecaSisInf
             DialogResult dlr = MessageBox.Show("Estas seguro?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.OK)
             {
-                estudianteController.eliminar(Convert.ToInt32(idLabel1.Text));
+                libroController.eliminar(Convert.ToInt32(idLabel1.Text));
                 this.buscar();
             }
         }

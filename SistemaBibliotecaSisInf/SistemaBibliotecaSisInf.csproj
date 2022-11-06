@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SistemaBibliotecaSisInf</RootNamespace>
     <AssemblyName>SistemaBibliotecaSisInf</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +32,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -43,11 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\LibroController.cs" />
+    <Compile Include="Controladores\EstudianteController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLibro.Designer.cs">
+      <DependentUpon>FrmLibro.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAlumno.cs">
       <SubType>Form</SubType>
@@ -55,28 +73,52 @@
     <Compile Include="FrmAlumno.Designer.cs">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLibros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLibros.Designer.cs">
-      <DependentUpon>FrmLibros.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Devolucion.cs">
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Estudiante.cs">
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Libro.cs">
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\ModelBiblioteca.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBiblioteca.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\ModelBiblioteca.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\ModelBiblioteca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBiblioteca.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Prestamo.cs">
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Usuario.cs">
+      <DependentUpon>ModelBiblioteca.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLibro.resx">
+      <DependentUpon>FrmLibro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAlumno.resx">
       <DependentUpon>FrmAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLibros.resx">
-      <DependentUpon>FrmLibros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -91,6 +133,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Modelos\ModelBiblioteca.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBiblioteca.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelos\ModelBiblioteca.edmx.diagram">
+      <DependentUpon>ModelBiblioteca.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SistemaBibliotecaSisInf.Modelos.Devolucion.datasource" />
+    <None Include="Properties\DataSources\SistemaBibliotecaSisInf.Modelos.Estudiante.datasource" />
+    <None Include="Properties\DataSources\SistemaBibliotecaSisInf.Modelos.Libro.datasource" />
+    <None Include="Properties\DataSources\SistemaBibliotecaSisInf.Modelos.Prestamo.datasource" />
+    <None Include="Properties\DataSources\SistemaBibliotecaSisInf.Modelos.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +183,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Modelos\ModelBiblioteca.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBiblioteca.Context.cs</LastGenOutput>
+      <DependentUpon>ModelBiblioteca.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modelos\ModelBiblioteca.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBiblioteca.edmx</DependentUpon>
+      <LastGenOutput>ModelBiblioteca.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\application_edit.png" />
+    <None Include="Resources\edit1.png" />
+    <None Include="Resources\bullet_edit.png" />
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
