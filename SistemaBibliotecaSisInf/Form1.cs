@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaBibliotecaSisInf.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +45,13 @@ namespace SistemaBibliotecaSisInf
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.openForm(new FrmAlumno());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolUser.Text = String.Format("(c) 2022 {0} | {1}",
+                App.usuarioAuth.Cuenta,
+                App.usuarioAuth.NombreCompleto);
         }
     }
 }

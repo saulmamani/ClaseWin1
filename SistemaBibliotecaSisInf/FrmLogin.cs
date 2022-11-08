@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaBibliotecaSisInf.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,10 @@ namespace SistemaBibliotecaSisInf
             string cuenta = txtCuenta.Text;
             string password = txtPassword.Text;
 
-            if (cuenta == "admin" && password == "123")
+            UsuarioController usuarioController = new UsuarioController();
+            bool isLogin = usuarioController.login(cuenta, password);
+
+            if (isLogin == true)
             {
                 this.Visible= true;
                 this.ShowInTaskbar = false;
