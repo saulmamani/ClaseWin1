@@ -53,5 +53,11 @@ namespace SistemaBibliotecaSisInf
                 App.usuarioAuth.Cuenta,
                 App.usuarioAuth.NombreCompleto);
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frmBusquedaLibro = new FrmBusquedaLibros();
+            this.openForm(frmBusquedaLibro);
+        }
     }
 }

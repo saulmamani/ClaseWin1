@@ -14,11 +14,14 @@ namespace SistemaBibliotecaSisInf.Controladores
         public bool login(string cuenta, string password)
         {
             var usuario =
-                _db.Usuario.Where(q => q.Cuenta == cuenta && q.Password == password).SingleOrDefault();
+                _db.Usuario
+                .Where(q => q.Cuenta == cuenta && q.Password == password)
+                .SingleOrDefault();
 
             if (usuario != null)
             {
                 App.usuarioAuth = usuario;
+                App.isLogin = true;
                 return true;
             }
 

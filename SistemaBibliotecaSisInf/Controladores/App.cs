@@ -10,5 +10,6 @@ namespace SistemaBibliotecaSisInf.Controladores
     internal class App
     {
         public static Usuario usuarioAuth = new Usuario();
+        public static bool isLogin = false;
     }
 }

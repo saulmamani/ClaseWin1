@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6fc61ced22544b24a36414429a7bb4be" Name="Diagram1">
         <EntityTypeShape EntityType="bibliotecabdModel.Devolucion" Width="1.5" PointX="6.375" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bibliotecabdModel.Estudiante" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bibliotecabdModel.Estudiante" Width="1.5" PointX="0.875" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="bibliotecabdModel.Libro" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="bibliotecabdModel.Prestamo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="bibliotecabdModel.Usuario" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />

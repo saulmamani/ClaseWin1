@@ -45,5 +45,15 @@ namespace SistemaBibliotecaSisInf.Controladores
             _db.Libro.Remove(libro);
             return _db.SaveChanges() > 0;
         }
+        
+        public List<Libro> buscarLibroEstudiante(string par) 
+        {
+            par = par.ToLower().Trim(); //eliminar espacios
+            return _db.Libro.Where(q => 
+                q.Titulo.ToLower().Contains(par) || 
+                q.Codigo.ToLower().Contains(par) ||
+                q.Autor.ToLower().Contains(par)
+            ).ToList();
+        }
     }
 }

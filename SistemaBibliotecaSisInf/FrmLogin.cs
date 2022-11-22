@@ -12,9 +12,11 @@ namespace SistemaBibliotecaSisInf
 {
     public partial class FrmLogin : Form
     {
-        public FrmLogin()
+        FrmBusquedaLibros frmBusquedaLibros;
+        public FrmLogin(FrmBusquedaLibros frmBusquedaLibros)
         {
             InitializeComponent();
+            this.frmBusquedaLibros = frmBusquedaLibros;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -27,6 +29,10 @@ namespace SistemaBibliotecaSisInf
 
             if (isLogin == true)
             {
+                // Ocultando el formulario de busqueda de libros
+                this.frmBusquedaLibros.ShowInTaskbar = false;
+                this.frmBusquedaLibros.Visible = false;
+
                 this.Visible= true;
                 this.ShowInTaskbar = false;
                 Form1 frmPrincipal = new Form1();
